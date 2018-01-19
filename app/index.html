@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+<!--compat-->
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192" href="https://assets.fathead.com/_fh16/FH-ms-icon.png"> <!--Icon for mobile "add to home screen" functionality -->
+
+
+<meta name="theme-color" content="#0050AE">
+<meta name="msapplication-navbutton-color" content="#0050AE">
+<meta name="apple-mobile-web-app-status-bar-style" content="#0050AE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="google-site-verification" content="Mx1mhHWqi_Yb2jjTmO-8iLIYnkS5sW_vBiZWVHAWACo" />
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js" charset="utf-8"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.js" charset="utf-8"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400italic,500,700,900|Roboto:900,700,500,400,400italic,300'
+rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+<link rel="stylesheet" href="/css/built.css">
+<link rel="stylesheet" href="/css/careers.css">
+
+
+<div class="fatheadViewport">
+
+
+	<header class="headA">
+
+		<!--PROMO-->
+	<div class="pure-g promoHead mobDest">
+			<div class="pure-u-1-1" id="desktopPromo">
+				<div class="promo" id="promo">
+					<div class="summary-bar"></div>
+	                <div class="summary-wrap fhContainer w1280">
+
+				    </div>
+				</div>
+			</div>
+		</div>
+
+		<!--TOP HEADER-->
+		<div class="headerContainerWrap">
+			<div class="fhContainer headerContainer w1280 mobDest">
+				<div class="pure-g headerTop">
+					<div class="pure-u-1-3 lMen">
+						<ul>
+							<li class="isSearch"><a href="#" rel="nofollow"><i class="fa fh-new-search"></i><span>Search</span></a>
+							</li>
+						</ul>
+					</div>
+					<div class="pure-u-1-3 midLogo">
+						<div class="logo">
+							<a href="/">
+								<i class="fa fh-new-fh-logo"></i>
+							</a>
+						</div>
+					</div>
+					<div class="pure-u-1-3 rMen">
+						<ul>
+							<li class="noHov">
+								<a href="/shoppingcart/" class="shoppingCart">
+									<span class="cartAmount cart-count hidden-sm hidden-md visible-961-inline visible-lg-inline visible-xl-inline"></span>
+									<i class="fa fh-new-cart"></i>
+								</a>
+							</li>
+							<li><a href="http://pro.fathead.com/">Business Solutions</a></li>
+							<li><a href="/gallery/">Fan Gallery</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--DESK SEARCHBAR DROPDOWN-->
+		<div class="searchWrap deskSearch mobDest" style="z-index: 2;">
+			<div class="searchBarWrap">
+				<div class="fhContainer w1280">
+					<form action="/search-results/">
+						<i class="fa fh-new-search" id="searchicon"></i><input id="fhSearch" placeholder="Search here now"
+							type="text" name="term"><i class="fa fa-close fh-new-close" id="closeicon"></i>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<!--MOBILE SEARCHBAR DROPDOWN-->
+		<div class="searchWrap mobSearch mobCrea" style="z-index: 2;">
+			<div class="searchBarWrap">
+				<div class="fhContainer w1280">
+					<form action="/search-results/">
+						<i class="fa fa-search" id="searchiconmob"></i><input id="fhSearchmob" placeholder="Search here now" type="text" name="term">
+						<i class="fa fa-close fh-new-close"></i>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!--PARENT TEMPLATE-->
+		<script type="text/handlebars-template" id="handlebars-template">
+      {{#Menu}} {{#Parents}}
+      <li>
+        <a href="{{parentLink}}"><i class="{{parentIconClass}}"></i>{{parentTitle}}</a>
+      </li>
+      {{/Parents}} {{/Menu}}
+    </script>
+		<!--PARENT MARKUP-->
+		<div class="drpDown-cont deskMen mobDest">
+			<div class="drpDown-act fhContainer w1280">
+			<ul class="drpDown parentList">
+
+      <li>
+        <a href="/custom/"><i class="fa  fh-new-custom"></i>Custom</a>
+      </li>
+
+      <li>
+        <a href="/sports/"><i class="fa  fh-new-sports"></i>Sports</a>
+      </li>
+
+      <li class="">
+        <a href="/kids/"><i class="fa  fh-new-kids"></i>Kids</a>
+      </li>
+
+      <li>
+        <a href="/entertainment/"><i class="fa  fh-new-entertainment"></i>Entertainment</a>
+      </li>
+
+      <li>
+        <a href="/art-decor/"><i class="fa  fh-new-art"></i>Art &amp; Design</a>
+      </li>
+
+      <li>
+        <a href="/office-education/"><i class="fa  fh-new-business"></i>Office</a>
+      </li>
+
+      <li class="noChildren">
+        <a href="/outlet/"><i class="fa  fh-new-featured"></i>Outlet</a>
+      </li>
+
+    </ul>
+			</div>
+		</div>
+		<!--DESCENDENTS WRAPPERS-->
+		<div class="childMenWrap mobDest">
+			<div class="childMenInnerWrap">
+				<!--CHILDREN TEMPLATE-->
+				<script type="text/handlebars-template" id="handlebars-template2">
+            {{#Menu}} {{#Parents}}
+            <div class="childCont">
+              <ul>
+                {{#Children}}
+                <li class="{{childClass}}">
+                  <a href=" {{childLink}}"> {{childTitle}}</a>
+                </li>
+                {{/Children}}
+              </ul>
+            </div>
+            {{/Parents}} {{/Menu}}
+          </script>
+				<!--CHILDREN MARKUP-->
+				<div class="childContWrap">
+				</div>
+
+				<!--GRANDCHILDREN TEMPLATE-->
+				<script type="text/handlebars-template" id="handlebars-template3">
+ {{#Menu}}{{#Parents}}
+          <div class="gChildCont">
+		  {{#Children}}
+            <div class="gChildMen">
+              <ul class="{{childClass}}" data-columns="{{columns}}">
+			  {{#Grandchildren}}
+                <li class="{{gcImgClass}} {{gcLinkClass}}">
+                  <a href="{{gcLink}}">
+							    <img class="{{gcImgClass}}"src="{{gcImgsrc}}" alt="{{gcTitle}}">
+									<span class="gcThumbWrap" style="background-image:url('https://assets.fathead.com/_fh16/spritesheet_2-17.png'); background-position:{{gcThumbPos}}"></span>
+										{{gcTitle}}
+									</a>
+                </li>
+				{{/Grandchildren}}
+              </ul>
+            </div>
+			 {{/Children}}
+          </div>
+		{{/Parents}}{{/Menu}}
+          </script>
+
+
+				<!--GRANDCHILDREN MARKUP-->
+				<div class="gChildContWrap">
+
+
+				</div>
+				<!--/GRANDCHILDREN WRAPPER-->
+			</div>
+			<!--/DESCENDENT INNER WRAPPER-->
+		</div>
+		<!--/DESCENDENT OUTER WRAPPER-->
+
+
+
+		<!--MOBILE-->
+		<div class="mobHeader mobCrea pure-g">
+			<!--MOBILE PROMO-->
+			<div class="pure-g promoHead mobCrea">
+				<div class="pure-u-1-1" id="mobilePromo">
+					<div class="promo" id="promo">
+						<div class="summary ">
+
+						</div>
+						<a class="promoClose" href="javascript:void(0);"><i class="fa fa-close fh-new-close" id="closeicon"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!--TOP HEADER-->
+			<div class="row ">
+				<div class="lMen pure-u-1-5"> <i class="fa fa-bars fh-new-hamburger mobMenBtn" style="padding: 0.1rem 0 0 0.6rem;"></i></div>
+				<div class="mobLogo pure-u-3-5">
+					<a href="/">
+						<img src="https://assets.fathead.com/fh16test/svg/fh-16_Logo.svg" alt="Fathead" title="Fathead" />
+					</a>
+				</div>
+				<div class="rMen pure-u-1-5">
+					<a href="/shoppingcart/" class="shoppingCart">
+						<span class="cartAmount cart-count"></span>
+						<i class="fa fh-new-cart mobCart"></i>
+					</a>
+					<i class="fa fh-new-search mobSearch"></i>
+				</div>
+			</div>
+
+			<!--MOBILE TEMPLATE-->
+
+			<script type="text/handlebars-template" id="handlebars-template4">
+{{#Menu}}{{#Parents}}
+			<li>
+				<a class="{{parentLinkClass}}" href="{{parentLink}}"><i class="{{parentIconClass}}"></i>{{parentTitle}}</a>
+				<ul class="mobSubMen">
+					{{#Children}}
+					<li class="{{childClass}}">
+						<a href="{{childLink}}">{{childTitle}}</a>
+						<!--G CHILDREN-->
+						<ul class="mobGrChildMen">
+							{{#Grandchildren}}
+							<li><a href="{{gcLink}}">{{gcTitle}}</a></li>
+							{{/Grandchildren}}
+						</ul>
+
+					</li>
+					{{/Children}}
+				</ul>
+			</li>
+			{{/Parents}} {{/Menu}}
+          </script>
+
+
+			<!--MOBILE DROPDOWN-->
+			<div class="drpDown-cont mobMen">
+				<div class="drpDown-act fhContainer w1280">
+					<ul class="drpDown mobTemp">
+
+					</ul>
+				</div>
+			</div>
+			<!--/MOBILE DROPDOWN-->
+		</div>
+		<!--/MOBILE-->
+	</header>
+	<!--HEAD SPECIFIC JS -->
+<body>
+	<div class="image-fixed section">
+		<div class="blurb">
+			<h1 class="heading-2">Careers</h1>
+
+
+			<div class="career-info">
+				<p class="p-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="col-md-12 official-desktop-breakpoint">
+			<div class="heading-line">
+				<h3 class="blue brand h3">Open Positions</h3>
+			</div>
+
+
+			<div class="blue-bar"><img alt="" src="https://assets.fathead.com/fh_careers/Rectangle3.jpg">
+			</div>
+		</div>
+	</div>
+	<!-- <div class="job">
+	    <h4 class="zero-jobs">There are currently no job openings</h4>
+	    <p class="no-jobs">Lorem ipsum dolor sit amet,
+	        consectetur adipisicing elit, sed do eiusmod tempor
+	        incididunt ut labore et dolore magna aliqua.
+
+	    </p>
+	        </div> -->
+
+
+	<div class="jobs-container">
+		<div class="job-headings">
+			<div class="name-company title">
+				<h4 class="h4-job-heading">Title</h4>
+			</div>
+
+
+			<div class="location name-company">
+				<h4 class="h4-job-heading">Location</h4>
+			</div>
+		</div>
+		<!-- <div id="jobRow">
+	        </div> -->
+		<!-- <div class="job-nest-row">
+	                    <div class="job-listing-row odd">
+
+	                        <div class="job-company title">
+	                            <h4 class="job">
+	                                <a href="#" id=job-link-button class="job-link-one">Database Engineer</a>
+	                            </h4>
+	                        </div>
+
+	                        <div class="job-company location">
+	                            <h4 class="job">US-MI-Detroit</h4>
+	                        </div>
+	                    </div>
+	                </div> -->
+		<!-- CONTENT TO SHOW AND HIDE -->
+
+
+		<div class="job-nest-row">
+			<div class="job-listing-row odd">
+				<div class="job-company title">
+					<h4 class="job"><a class="job-link-one" href="#" id="job-link-button">Seasonal In-Bound Call Center Representative</a>
+					</h4>
+				</div>
+
+
+				<div class="job-company location">
+					<h4 class="job">US-MI-Detroit</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="list-two">
+		<ul>
+			<li><strong>Company Name:</strong> <span class="comp-name">Fathead LLC</span></li>
+
+
+			<li><strong>Title:</strong> <span class="comp-title"><a class="job-link-one">Database Engineer</a></span></li>
+
+
+			<li><strong>Location:</strong> <span class="comp-location">US-MI-DETROIT</span></li>
+		</ul>
+	</div>
+	<!-- CONTENT TO SHOW AND HIDE -->
+
+
+	<div class="hidden_content_one hidden_content">
+		<div class="x">
+			X
+		</div>
+
+
+		<h5 class="modal-heading">RESPONSIBILITIES:</h5>
+
+
+		<ul class="modal-list">
+			<li style="list-style: none; display: inline">
+				<div id="descrtion-dtails">
+				</div>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Responsible for taking inbound calls and responding to all initial customer inquiries</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Field all in bound calls, determining the customer needs and transferring them to the appropriate party</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Walking customers through a simple order process</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Providing superior phone service regarding product offering, availability, and information.</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Contribute to individual and team sales or customer service goal</p>
+			</li>
+		</ul>
+
+
+		<h5 class="modal-heading">REQUIREMENTS:</h5>
+
+
+		<ul class="modal-list">
+			<li>
+				<p class="job-descript">• Previous sales and/or customer service experience preferred</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Must be computer literate; Requires data entry</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Goal oriented</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Ability to work in a fast-paced environment</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Ability to multi-task and work well in a dynamic business environment</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Ability to work independently, as well as part of a team</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Superior customer service skills and ability to maintain positive working relationships</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Strong organizational skills and attention to details</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Excellent verbal and written communication skills</p>
+			</li>
+
+
+			<li>
+				<p class="job-descript">• Must have open availability and be willing to work a flexible schedule, including nights & weekends</p>
+			</li>
+		</ul>
+		<!-- <h5 class="modal-heading">WHAT'LL MAKE YOU SPECIAL:</h5>
+
+
+	            <ul class="modal-list">
+	                <li>
+	                    <p class="job-descript">- Experience with Data Warehouse Engineering</p>
+	                </li>
+	            </ul> -->
+
+
+		<div class="apply">
+			<button class="btn btn-primary apply-btn" type="button">Fill Out The Application</button>
+		</div>
+	</div>
+	<!-- <div id="listTwo">
+	    </div> -->
+	<!-- <div class="list-two">
+	        <ul>
+	            <li><strong>Title:  </strong><span class="comp-title"><a class="job-link">Database Engineer</a></span></li>
+	            <li><strong>Location:  </strong> <span class="comp-location"> US-MI-DETROIT</span></li>
+	        </ul>
+
+	    </div> -->
+
+
+	<div class="formArea">
+	</div>
+
+
+	<div class="form-head-section" id="job-form">
+		<div class="official-desktop-breakpoint-form">
+			<div class="heading-line-form">
+				<h3 class="blue apply-brand brand h3-form">Apply Now</h3>
+			</div>
+
+
+			<div class="blue-bar"><img alt="" src="https://assets.fathead.com/fh_careers/Rectangle3.jpg">
+			</div>
+		</div>
+
+
+		<form action="mailto:careers@fathead.com" class="form-width" enctype="text/plain" id="contactForm" method="post" name="contactForm" onsubmit="/career-thanks/">
+			<div class="form-group">
+				<label for="name">First Name: <span class="req-field">*</span></label> <input class="form-control text-field" id="firstName" name="firstName" placeholder="Enter your first name" type="text">
+
+				<div id="messages">
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="name">Last Name: <span class="req-field">*</span></label> <input class="form-control text-field" id="lastName" name="lastName" placeholder="Enter your last name" type="text">
+
+				<div id="messages">
+				</div>
+				<!-- <p class="text-danger valid-text">Please enter your last name</p> -->
+			</div>
+
+
+			<div class="form-group">
+				<label for="email">Email Address: <span class="req-field">*</span></label> <input class="form-control text-field" id="email" name="email" placeholder="Enter your email" type="email">
+
+				<div id="messages">
+				</div>
+				<!-- <p class="text-danger valid-text">Please enter a valid email address</p> -->
+			</div>
+
+
+			<div class="form-group">
+				<label for="Phone">Phone Number: <span class="req-field">*</span></label> <input class="form-control text-field" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" type="text">
+
+				<div id="messages">
+				</div>
+				<!-- <p class="text-danger valid-text ">Please enter a valid phone number</p> -->
+			</div>
+
+
+			<div class="form-group">
+				<label for="Referral">Referral:</label> <input class="form-control text-field" id="referral" name="referral" placeholder="Referral" type="text"> <!-- <p class="text-danger valid-text ">Please enter a valid phone number</p> -->
+			</div>
+
+
+			<div class="form-group">
+				<label class="position-label" for="position">Which Job are you applying for: <span class="req-field">*</span></label>
+
+				<div class="controls">
+					<select class="required" id="position" name="position">
+						<option class="selected" selected value="">
+							Choose Position:
+						</option>
+					</select>
+
+					<div id="messages">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="resume">Upload your resume <span class="req-field">*</span></label> <input id="resume" name="resume" type="file">
+
+				<div id="messages">
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label for="cv">Upload your cover letter</label> <input id="cv" name="cv" type="file">
+			</div>
+			<button class="btn sub-btn" id="submit" type="submit" value="submit">Submit</button>
+		</form>
+	</div>
+
+
+	<div class="thanks-section">
+		<h1 id="display-thanks">Thank you! Lorem ipsum dolor sit amet, commodo consequat.</h1>
+		<span class="category">REAL.BIG. Fathead Lorem ipsum dolor</span>
+
+		<div id="thanks-details">
+			<div id="saying-thankyou">
+				Lorem ipsum dolor sit amet, commodo consequat. <i aria-hidden="true" class="fa fa-bath"></i>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact-us">
+		<p class="contact-fathead">For more info - <a href="mailto:careers@fathead.com">contact us</a></p>
+		<p class="contact-fathead">Know somone who is interested in a position at Fathead? <a href="mailto:?subject=Open positions at Fathead&body=There is at least one open position at Fathead! You should apply! https://test2.fathead.com/careers/">Forward to a friend!</a></p>
+		<p class="contact-fathead"><a href="#" id="back-to-top" title="Back to top">Back to top</a></p>
+		<p class="contact-fathead"><a href="https://www.fathead.com/" title="home">home</a></p>
+	</div>
+	<!--begin foot-->
+	<!-- <div class="foot-cap"></div> -->
+	<!-- End Body Content -->
+
+
+	<div class="fhContainer w1280" id="catalogTarget">
+	</div>
+	<!--<div id="backToTop" class="hidden-961" hidden>-->
+	<!--    <i class="fh-icon-triangle-up"></i> <span> Back To Top </span> <i class="fh-icon-triangle-up"></i>-->
+	<!--</div>-->
+
+   <footer>
+
+       <div class="fhContainer w1280 pure-g box">
+
+
+
+           <div class="contact pure-u-1-1 pure-u-md-1-2 pure-u-961-1-2 pure-u-lg-1-4 pure-u-xl-1-4 padded">
+               <h4>Contact Fathead</h4>
+               <div class="footer-column">
+
+                   <a href="tel:18773288877" rel="nofollow" class=""><i class="fa fa-phone"></i> (877) 328-8877</a>
+                    <a href="mailto:customerservice@fathead.com" rel="nofollow" class=""><i class="fa fa-envelope fh-new-email"></i> Email Support</a>
+                     <a href="https://www.fathead.com/order-status" rel="nofollow" class=""><i class="fa fa-cube fh-new-package"></i> Track your Order</a>
+                      <a href=" https://support.fathead.com/hc/en-us" rel="nofollow" class=""><i class="fa fa-question-circle fh-new-help"></i> Help Center</a>
+
+               </div>
+           </div>
+
+
+
+
+
+           <div class="theFacts pure-u-1-1 pure-u-md-1-2 pure-u-961-1-2 pure-u-lg-1-4 pure-u-xl-1-4 padded">
+               <h4>More About Fathead</h4>
+               <div class="footer-column">
+                   <!--<a href="//www.fathead.com/about-us/" class="footer-usa-made"></a>-->
+                   <!--<a href="/about-us/">Our Story</a>-->
+                   <a href="https://careers-quickenloans.icims.com/jobs/search?ss=1&searchCompany=18" target="_blank">Careers</a>
+                   <a href="/our-partners/">Our Partners</a>
+                   <a href="/terms-and-conditions/#PrivacyPolicy">Privacy Policy</a>
+                   <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+               </div>
+           </div>
+
+
+
+
+
+
+
+
+
+           <div class="social pure-u-1-1 pure-u-md-1-2 pure-u-961-1-2 pure-u-lg-1-4 pure-u-xl-1-4 padded">
+               <h4>Stay Connected</h4>
+               <div class="pure-g footer-column">
+                   <div class="pure-u-1-4 pure-u-961-1-4 pure-u-lg-1-2 pure-u-xl-1-4">
+                       <a href="https://www.facebook.com/fathead" class="facebook" target="_blank"></a>
+                   </div>
+                    <div class="pure-u-1-4 pure-u-961-1-4 pure-u-lg-1-2 pure-u-xl-1-4">
+                       <a href="https://www.twitter.com/fathead" class="twitter" target="_blank"></a>
+                   </div>
+                    <div class="pure-u-1-4 pure-u-961-1-4 pure-u-lg-1-2 pure-u-xl-1-4">
+                       <a href="https://www.instagram.com/fathead/" class="instagram" target="_blank"></a>
+                   </div>
+                    <div class="pure-u-1-4 pure-u-961-1-4 pure-u-lg-1-2 pure-u-xl-1-4">
+                       <a href="https://www.pinterest.com/fathead/" class="pinterest" target="_blank"></a>
+                   </div>
+                   <!--<div class="pure-u-1-3 pure-u-961-1-3 pure-u-lg-1-2 pure-u-xl-1-3">
+                       <a href="https://www.youtube.com/fathead" class="youtube" target="_blank"></a>
+                   </div>-->
+                   <!--<div class="pure-u-1-3 pure-u-961-1-3 pure-u-lg-1-2 pure-u-xl-1-3">
+                       <a href="https://plus.google.com/+fathead/posts" class="gplus" target="_blank"></a>
+                   </div>-->
+               </div>
+           </div>
+
+
+
+
+
+           <div class="fatheadNation pure-u-1-1 pure-u-md-1-2 pure-u-961-1-2 pure-u-lg-1-4 pure-u-xl-1-4 padded">
+               <form action="/email-signup/" method="get">
+                   <h4>Join Fathead Nation</h4>
+                   <div class="footer-column">
+
+                       <input type="email" name="email" id="email" placeholder="EMAIL">
+                       <button type="submit" class="fh-button orange block">Sign Me Up! <i class="fh-icon fh-new-caret-right"></i></button>
+                              <p>  Get Insider Access On Everything Fathead! Sign Up Today & Get $5 Off Your Next Order!</p>
+                       <small>* By submitting your email address you acknowledge that you are 13 years of age or older.</small>
+                   </div>
+               </form>
+           </div>
+
+
+
+
+
+       </div>
+       <div class="footer-stripe">
+     <div class="footer-stripe-act">
+               <div class="fhContainer w1280 pure-g">
+               <div class="pure-u-1-1 pure-u-lg-1-2 footer-column-bottom box">
+                   <p class="box">©2006-@DateTime.Now.Year Fathead, LLC. All Rights Reserved.</p>
+               </div>
+               <div class="pure-u-1-1 pure-u-lg-1-2 footer-column-bottom box">
+                   <!--                     <p class="box">For help or to order call: 1-877-328-8877 - All Photographs are Product Images.</p> -->
+               </div>
+           </div>
+     </div>
+       </div>
+       </div>
+   </footer>
+
+
+	 <script src="js/career.js"></script>
+   <script src="js/validation.js"></script>
+	 <script src="https://assets.fathead.com/js/handlebars.min.js"></script>
+
+
+</body>
+</html>
